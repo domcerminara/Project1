@@ -47,3 +47,25 @@ q:before, q:after {
 blockquote, q {
 	quotes: "" "";
 }
+
+#wrapper {
+  border: 1px solid;
+  margin: 25px auto;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  width: half;
+}
+
+body {
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 1.5em;
+}
+
+h1 {
+  font-size: 24px;
+  padding-top:10px;
+  margin-bottom: -15px;
+  text-align: center;
+}

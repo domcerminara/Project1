@@ -22,8 +22,8 @@ $(function() {
 
 //Adds result to HTML
 function displayResult(result) {
-   //PHASE2var arr = result.similarartists.artist.image[3]; //Array object containg image url
+   console.log(result);
    var name = result.similarartists.artist.name; //Name of similar artist
-   $("#artistpic").html("<p> Since you like " + $("#artist").val() + ", you should check out " + name + " too!</p>");  
-}
+   $("#artistinfo").html("<p> Since you like " + $("#artist").val() + ", you should check out <a id='show' href='http://"+ result.similarartists.artist.url +"'>" + name + "</a> too!</p>");
+};
 
