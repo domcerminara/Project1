@@ -55,12 +55,14 @@ blockquote, q {
   padding-left: 15px;
   padding-bottom: 15px;
   width: half;
+  background-color: #48D1FE;
 }
 
 body {
   padding-left: 10px;
   padding-right: 10px;
   line-height: 1.5em;
+  background-color: #BFCACD;
 }
 
 h1 {
@@ -68,4 +70,14 @@ h1 {
   padding-top:10px;
   margin-bottom: -15px;
   text-align: center;
+}
+
+#footer {
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+}
+  
+html {
+  font-family: Georgia,Serif;
 }
