@@ -81,3 +81,11 @@ h1 {
 html {
   font-family: Georgia,Serif;
 }
+
+a:hover {
+  text-decoration: none;
+}
+
+#submit:hover {
+  cursor: pointer;
+}

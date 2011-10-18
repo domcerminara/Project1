@@ -1,7 +1,11 @@
 //Dominic Cerminara
-//Send JSONP Request
+
+//Send JSONP Request when submit is clicked
 $(function() {
-   $('#submit').click(function() {                                   
+   $('#submit').click(function() {  
+    //reset fields                                 
+    $("#error").html("");
+    $("#artistinfo").html("");    
     $.ajax({
       url: 'http://ws.audioscrobbler.com/2.0',
       data: {
@@ -22,6 +26,20 @@ $(function() {
 
 //Adds result to HTML
 function displayResult(result) {
-   $("#artistinfo").html("<p> Since you like " + $("#artist").val() + ", you should check out <a href='http://"+ result.similarartists.artist[0].url + "' target='_blank'>" + result.similarartists.artist[0].name + "</a>, <a href='http://"+ result.similarartists.artist[1].url + "' target='_blank'>" + result.similarartists.artist[1].name + "</a>, and <a href='http://"+ result.similarartists.artist[2].url + "' target='_blank'>" + result.similarartists.artist[2].name + "</a> too!</p>");
+   if(result.error != null) //if artist entered could not be found
+   {
+      $("#error").html("The artist you requested could not be found. Please try again.");
+   }
+   else
+   {
+      $("#artistinfo").html("<p>Since you like " + $("#artist").val()//Artist name that was typed in
+       + ", you should check out <a href='http://"+ result.similarartists.artist[0].url //first artist's url
+       + "' target='_blank'>" + result.similarartists.artist[0].name //first artist's name
+       + "</a>, <a href='http://"+ result.similarartists.artist[1].url //second artist's url 
+       + "' target='_blank'>" + result.similarartists.artist[1].name //second artist's name
+       + "</a>, and <a href='http://"+ result.similarartists.artist[2].url //third artist's url
+       + "' target='_blank'>" + result.similarartists.artist[2].name //third artist's name 
+       + "</a> too!</p>");
+   }   
 };
 
